@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: white;
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 70%;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background: #4facfe;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        .btn {
+            display: block;
+            margin: 20px auto;
+            width: 180px;
+            text-align: center;
+            padding: 10px;
+            background: #4facfe;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background: #00c6ff;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Admin Panel 📊</h2>
+
+<table>
+<tr>
+    <th>ID</th>
+    <th>Email</th>
+</tr>
+
+{% for user in users %}
+<tr>
+    <td>{{ user.id }}</td>
+    <td>{{ user.email }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<a href="/dashboard" class="btn">Back to Dashboard</a>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 320px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #4facfe;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #00c6ff;
+        }
+
+        .g-recaptcha {
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+
+    <!-- Google reCAPTCHA script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Login 🔑</h2>
+
+    <form method="POST">
+        <input type="email" name="email" placeholder="Enter Email" required>
+        <input type="password" name="password" placeholder="Enter Password" required>
+
+        <!-- CAPTCHA -->
+        <div class="g-recaptcha" data-sitekey="6LdiztIsAAAAAIaoBl0qPAt_6T0pXIOc6N2H7T48"></div>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p>Don't have an account? <a href="/register">Register</a></p>
+</div>
+
+</body>
+</html>

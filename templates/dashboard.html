@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 350px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .email {
+            margin: 15px 0;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .btn {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            background: #4facfe;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            width: 80%;
+        }
+
+        .btn:hover {
+            background: #00c6ff;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Welcome 🎉</h2>
+    <p>You are logged in as:</p>
+    <div class="email">{{ email }}</div>
+
+    <!-- Logout Button -->
+    <a href="/logout" class="btn">Logout</a>
+
+    <!-- Admin Button (only visible to admin) -->
+    {% if email == "deshmukhyash553@gmail.com" %}
+    <a href="/admin" class="btn">Admin Panel</a>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
